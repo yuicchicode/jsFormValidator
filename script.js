@@ -45,7 +45,7 @@ let yValidator = {
         errorElement.classList.add('error');
         errorElement.innerHTML = error;
 
-        input.parentElement.insertBefore(errorElement, input);
+        input.parentElement.insertBefore(errorElement, input.ElementSibling);
     }
 };
 
