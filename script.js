@@ -10,7 +10,7 @@ let yValidator = {
             let check = yValidator.checkInput(input);
             if(check !== true) {
                 send = false;
-                console.log(check);
+                yValidator.showError(input, check)
             }
         }
 
@@ -37,6 +37,15 @@ let yValidator = {
         }
 
         return true;
+    },
+    showError:(input, error) => {
+        input.style.borderColor = '#ff0000';
+
+        let errorElement = document.createElement('div');
+        errorElement.classList.add('error');
+        errorElement.innerHTML = error;
+
+        input.parentElement.insertBefore(errorElement, input);
     }
 };
 
